@@ -39,6 +39,7 @@
 19. [Snippets](#snippets)
     * [Files Embedding](#files-embedding)
     * [HTTP Server](#http-server)
+20. [Time](#time)
 
 ## Credits
 
@@ -782,5 +783,11 @@ func main() {
 //     ServeHTTP(w http.ResponseWriter, r *http.Request)
 // }
 ```
+# Time
 
+Both of these are valid RFC3339 times:
 
+```
+"2015-09-15T14:00:12-00:00"
+"2015-09-15T14:00:13Z"
+```
