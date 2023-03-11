@@ -787,7 +787,7 @@ func main() {
 
 Both of these are valid RFC3339 times:
 
-```
+```go
 "2015-09-15T14:00:12-00:00"
 "2015-09-15T14:00:13Z"
 ```
