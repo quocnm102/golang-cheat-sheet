@@ -522,17 +522,25 @@ var s *Vertex = new(Vertex) // new creates a pointer to a new struct instance
 ## Interfaces
 ```go
 // interface declaration
-type Awesomizer interface {
-    Awesomize() string
+type Animal interface {
+    Move() string
 }
-
-// types do *not* declare to implement interfaces
-type Foo struct {}
 
 // instead, types implicitly satisfy an interface if they implement all required methods
-func (foo Foo) Awesomize() string {
-    return "Awesome!"
+type horse struct {}
+
+func NewHorse() Animal {
+    return &Horse{}
 }
+
+// implement all required methods
+func (h *horse) Move() string {
+    return "run"
+}
+
+// using
+var pet Animal = NewHorse()
+pet.Move()
 ```
 
 ## Embedding
