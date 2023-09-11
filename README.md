@@ -310,6 +310,8 @@ func main() {
     }
     for { // you can omit the condition ~ while (true)
     }
+    for index, value := range pow {
+    }
     
     // use break/continue on current loop
     // use break/continue with label on outer loop
