@@ -545,7 +545,7 @@ func (h *horse) Move() string {
 var pet Animal = NewHorse()
 pet.Move()
 
-// [reference](https://github.com/uber-go/guide/blob/master/style.md)
+[reference](https://github.com/uber-go/guide/blob/master/style.md)
 // verify Interface Compliance
 // The statement var _ Provider = (*GgOauthHandler)(nil) will fail to compile if *GgOauthHandler ever stops matching the Provider interface.
 type GgOauthHandler struct {
