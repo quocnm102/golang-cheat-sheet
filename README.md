@@ -396,10 +396,12 @@ a := [...]int{1, 2} // elipsis -> Compiler figures out array length
 
 ### Slices
 ```go
-var a []int                              // declare a slice - similar to an array, but length is unspecified
-var a = []int {1, 2, 3, 4}               // declare and initialize a slice (backed by the array given implicitly)
-a := []int{1, 2, 3, 4}                   // shorthand
-chars := []string{0:"a", 2:"c", 1: "b"}  // ["a", "b", "c"]
+var a []int                                // declare a slice - similar to an array, but length is unspecified
+var a = []int {1, 2, 3, 4}                 // declare and initialize a slice (backed by the array given implicitly)
+a := []int{1, 2, 3, 4}                     // shorthand
+chars := []string{0:"a", 2:"c", 1: "b"}    // ["a", "b", "c"]
+var a [][]str                              // This declares a slice of slices of strings. It's a two-dimensional slice where each element is a slice of strings.
+a := make([][]string, len(anotherSlices))  // Initialize a 2D slice with the size of the dataSlice
 
 var b = a[lo:hi]	// creates a slice (view of the array) from index lo to hi-1
 var b = a[1:4]		// slice from index 1 to 3
@@ -411,6 +413,7 @@ c := append(a,b...)	// concatenate slices a and b
 // create a slice with make
 a = make([]byte, 5, 5)	// first arg length, second capacity
 a = make([]byte, 5)	// capacity is optional
+
 
 // create a slice from an array
 x := [3]string{"Лайка", "Белка", "Стрелка"}
@@ -459,6 +462,9 @@ var m = map[string]Vertex{
     "Bell Labs": {40.68433, -74.39967},
     "Google":    {37.42202, -122.08408},
 }
+
+// map complicate: key is a slice of 26 digits, value is a slice of strings
+m := make(map[[26]int][]string)
 
 // iterate over map content
 for key, value := range m {
